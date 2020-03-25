@@ -26,13 +26,18 @@ import {
 import Example from './screens/Example';
 
 import {Provider} from 'mobx-react';
-import AppStore from './store/store';
+// import AppStore from './store/store';
 
-const store = (window.store = new AppStore());
+// const store = (window.store = new AppStore());
+
+import TodoStore from './store/TodoStore';
+import Todo from './screens/Todo';
+
+const store = (window.store = new TodoStore());
 
 const App = () => (
   <Provider store={store}>
-    <Example />
+    <Todo />
   </Provider>
 );
 
